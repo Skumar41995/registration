@@ -1,0 +1,105 @@
+@import "../../assets/variables.less";
+.reg-form {
+    padding: 1rem;
+    border-radius: 6px;
+
+    label {
+        margin-bottom: 2px;
+        color: @dark-gray;
+    }
+    
+    .btn-w {
+        width: 100%;
+    }
+
+    [data-tooltip]:before, [data-tooltip]:after {
+        content: attr(data-tooltip);
+        background: #333;
+        color: #ffffff;
+        bottom: 100%;
+        width: 200px;
+        border-radius: 3px;
+        overflow: hidden;
+        text-align: justify;
+        height: 108px;
+        left: -80px;
+        top: -92px;
+        font-size: 12px;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .form-group {
+        margin-bottom: 0.6rem;
+        position: relative;
+
+        .form__input-common {
+            height: 40px;
+            font-size: 12px;
+            border: 1px solid @border-color !important;
+        }
+        
+        .form__error {
+            color: @red;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 400;
+            font-variant: normal;
+            padding: 4px 0;
+            height: 1.2rem;
+        }
+    }
+    
+    .m-t-15 {
+        margin-top: 15px;
+    }
+    
+    .form-group.required .control-label:after {
+        position: relative;
+        content: "*";
+        color: @red;
+        font-weight: 100;
+        right: -1px;
+    }
+    
+    .help {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 20px;
+    }
+    
+    .required::after {
+        content: "";
+    }
+
+    .help-img {
+        height: 20px;
+    }
+    
+    .heading{
+        height: 90px;
+        background-image: url('../../assets/images/xeeva.png');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .disable-pointer {
+        cursor: not-allowed !important;
+        opacity: 0.5 !important;
+    }
+}
+
+.vertical-center {
+    align-items: center;
+    min-height: 100vh;
+}
+
+.body-bg{
+    background-image: url('../../assets/images/image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

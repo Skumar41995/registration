@@ -1,0 +1,156 @@
+<div class="container-fluid body-bg">
+    <div class="row justify-content-md-center vertical-center">
+        <div class="col-lg-6 col-lg-offset-3">
+            <form [formGroup]="registerationForm" class="reg-form" novalidate (ngSubmit)="registerUser()">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <header class="heading"></header>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group required">
+                            <label class="control-label form_item_title">First Name</label>
+                            <input type="text" formControlName="firstName" class="form-control form__input-common"
+                                placeholder="Enter first name" autocomplete="off" onlyAscii />
+                            <div class="form__error">
+                                <div *ngIf="(firstName.dirty || firstName.touched) && !firstName.valid">
+                                    <div *ngIf="firstName.errors.required">First Name is required</div>
+                                    <div *ngIf="firstName.errors.pattern">Please enter valid first name</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group required">
+                            <label class="control-label form_item_title">Last Name</label>
+                            <input type="text" formControlName="lastNmae" class="form-control form__input-common"
+                                placeholder="Enter last name" autocomplete="off" onlyAscii />
+                            <div class="form__error">
+                                <div *ngIf="(lastNmae.dirty || lastNmae.touched) && !lastNmae.valid">
+                                    <div *ngIf="lastNmae.errors.required">Last Name is required</div>
+                                    <div *ngIf="lastNmae.errors.pattern">Please enter valid last name</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="form-group required">
+                            <label class="control-label form_item_title">Mobile</label>
+                            <input type="text" formControlName="mobileNo" class="form-control form__input-common"
+                                placeholder="Enter mob no" minlength="10" maxlength="10" autocomplete="off" onlyAscii />
+                            <div class="form__error">
+                                <div *ngIf="(mobileNo.dirty || mobileNo.touched) && !mobileNo.valid">
+                                    <div *ngIf="mobileNo.errors.required">Mobile No is required</div>
+                                    <div *ngIf="mobileNo.errors.pattern">Enter valid mobile no</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label form_item_title">City</label>
+                            <input type="text" formControlName="homeCity" class="form-control form__input-common"
+                                placeholder="Enter city" autocomplete="off" onlyAscii />
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label class="control-label form_item_title">State</label>
+                            <input type="text" formControlName="homeState" class="form-control form__input-common"
+                                placeholder="Enter state" autocomplete="off" onlyAscii />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="form-group required">
+                            <label class="control-label form_item_title">Birth Date</label>
+                            <input type="date" formControlName="dataOfBirth" class="form-control form__input-common"
+                                placeholder="Enter DOB" autocomplete="off" onlyAscii required />
+                            <div class="form__error">
+                                <div *ngIf="(dataOfBirth.dirty || dataOfBirth.touched) && !dataOfBirth.valid">
+                                    <div *ngIf="dataOfBirth.errors.required">Birth date is required</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group required">
+                            <label class="control-label form_item_title">Email</label>
+                            <input type="text" formControlName="emailAddress" class="form-control form__input-common"
+                                placeholder="Enter email" autocomplete="off" onlyAscii />
+                            <div class="form__error">
+                                <div *ngIf="(emailAddress.dirty || emailAddress.touched) && !emailAddress.valid">
+                                    <div *ngIf="emailAddress.errors.required">Email is required</div>
+                                    <div *ngIf="emailAddress.errors.pattern">Enter valid email</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <label class="control-label form_item_title">Address</label>
+                            <textarea formControlName="homeAddress" class="form-control form__input-common"
+                                placeholder="Address"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group required">
+                            <label class="control-label form_item_title">Password</label>
+                            <input type="password" formControlName="newPassword" class="form-control form__input-common"
+                                placeholder="Enter password" autocomplete="off" onlyAscii />
+                            <div class="form__error">
+                                <div *ngIf="(newPassword.dirty || newPassword.touched) && !newPassword.valid">
+                                    <div *ngIf="newPassword.errors.required">Password is required</div>
+                                    <div *ngIf="newPassword.errors.pattern">Password must match criteria</div>
+                                </div>
+                            </div>
+                            <a href="#" class="help" data-tooltip="Min length 8, Max length 20, Must include at least one uppercase letter, one lowercase letter, a number and one
+                            special character, For example: Xyzabcdd@12"><img src="../../assets/images/help.png"
+                                    class="help-img"></a>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group required">
+                            <label class="control-label form_item_title">Confirm Password</label>
+                            <input type="password" formControlName="confirmPassword"
+                                class="form-control form__input-common" placeholder="Confirm password"
+                                autocomplete="off" onlyAscii />
+                            <div class="form__error">
+                                <div
+                                    *ngIf="(confirmPassword.dirty || confirmPassword.touched) && !confirmPassword.valid">
+                                    <div *ngIf="confirmPassword.errors.required">Confirm password is
+                                        required
+                                    </div>
+                                    <div *ngIf="confirmPassword.errors.pattern">Confirm password must match
+                                        criteria</div>
+                                    <div *ngIf="confirmPassword.errors?.passwordMismatch && confirmPassword.value">
+                                        Password and comfirm password do not match
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="help" data-tooltip="Min length 8, Max length 20, Must include at least one uppercase letter, one lowercase letter, a number and one
+                            special character, For example: Xyzabcdd@12"><img src="../../assets/images/help.png"
+                                    class="help-img"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 offset-sm-4">
+                        <button type="button" class="btn btn-primary btn-block m-t-15 btn-w" (click)="registerUser()"
+                            title="Register" [disabled]="!registerationForm.valid"
+                            [ngClass]="!registerationForm.valid ? 'disable-pointer' : 'pointer'">
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
